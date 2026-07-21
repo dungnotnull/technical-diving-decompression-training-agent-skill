@@ -1,0 +1,64 @@
+{
+  "environment": "production",
+  "debug": false,
+  "knowledge": {
+    "domain": "Technical Diving Decompression Physiology & Safety",
+    "keywords": [
+      "technical diving decompression",
+      "Buhlmann ZHL-16 gradient factor",
+      "trimix oxygen toxicity narcosis",
+      "DCS decompression sickness",
+      "gas planning rule of thirds",
+      "deep diving fitness to dive"
+    ],
+    "max_results_per_source": 10,
+    "max_new_entries_per_run": 20,
+    "crawl_timeout_seconds": 30
+  },
+  "llm": {
+    "model_name": "claude-3-5-sonnet-20241022",
+    "max_tokens": 8192,
+    "temperature": 0.7,
+    "timeout_seconds": 120,
+    "enable_cache": true
+  },
+  "decompression": {
+    "model": "Bühlmann ZHL-16C",
+    "gradient_factor_low": 30,
+    "gradient_factor_high": 85,
+    "max_po2_working": 1.4,
+    "max_po2_decompression": 1.6,
+    "max_gas_density_grams_per_liter": 6.2
+  },
+  "quality_gates": {
+    "min_sources_required": 3,
+    "min_academic_sources": 1,
+    "enable_auto_fix": true,
+    "strict_mode": false
+  },
+  "features": {
+    "enable_probabilistic_dcs": false,
+    "enable_vpm_alternative_model": false,
+    "enable_rgbm_model": false,
+    "enable_cns_otu_tracking": true,
+    "enable_gas_density_validation": true
+  },
+  "api": {
+    "requests_timeout": 30,
+    "max_concurrent_requests": 5,
+    "user_agent": "technical-diving-skill/1.0",
+    "verify_ssl": true
+  },
+  "logging": {
+    "level": "INFO",
+    "file_enabled": true,
+    "file_path": "logs/technical_diving_skill.log",
+    "console_enabled": true,
+    "structured_logging": true
+  },
+  "monitoring": {
+    "enable_metrics": true,
+    "performance_tracking": true,
+    "error_tracking": true
+  }
+}
